@@ -25,6 +25,8 @@ npm start
 
 `check:site` prüft die tatsächlich erzeugten Next.js-Dateien. `npm start` benötigt einen fertigen Build. Keine statische Export-Version verwenden: Der Versand benötigt die Serverroute `/api/anfrage/`.
 
+Der Produktionsbuild verwendet ausdrücklich Webpack (`next build --webpack`). Das umgeht den auf Hostinger gemeldeten Turbopack-Abbruch bei der CSS-/PostCSS-Verarbeitung: Ein gestarteter Node-Prozess beendet sich dort vor der Verbindung zum Buildprozess. Die genaue Ursache in der Hostingumgebung ist ohne deren Panic-Log nicht nachgewiesen. Bei Hostinger als Build-Befehl `npm run build` verwenden, damit die Einstellung aus `package.json` greift. Der Startbefehl bleibt `npm start`; der lokale Entwicklungsserver bleibt unverändert.
+
 ## 2. Environment Variables
 
 Die Datei `.env.example` nach `.env.local` kopieren und die Werte ersetzen. `.env.local` bleibt privat und wird durch `.gitignore` vom Repository ausgeschlossen. Keine Zugangsdaten in Quellcode, Chat oder GitHub eintragen.
