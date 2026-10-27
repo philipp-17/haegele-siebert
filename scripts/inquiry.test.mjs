@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { handleInquiry } from '../lib/inquiry.ts';
 const origin = 'https://website.example';
 const valid = { firstName: 'Chris', lastName: 'Test', email: 'kunde@example.com', phone: '01771234567', service: 'Bitte die Hecke schneiden, einmalig in Allmersbach im Oktober.', privacy: true, website: '', submissionId: 'f71420b6-a4a5-4a75-88c9-cf18848d019c' };
-const config = { apiKey: 'dummy-unit-test-key', from: 'Website <anfragen@example.com>', recipient: 'grundstueckspflege.sh@outlook.de' };
+const config = { apiKey: 'dummy-unit-test-key', from: 'Website <anfragen@example.com>', recipient: 'Info@haegele-siebert.de' };
 const request = (data = valid, headers = {}) => new Request(`${origin}/api/anfrage/`, {method: 'POST', headers: {origin, 'content-type':'application/json', ...headers}, body: JSON.stringify(data)});
 const forbiddenSend = async () => { assert.fail('Diese Anfrage darf keine E-Mail auslösen'); };
 

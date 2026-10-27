@@ -1,6 +1,6 @@
 ﻿# Hägele & Siebert Grundstückspflege
 
-Bestehende Next.js-Website mit TypeScript und Tailwind CSS. Das Kontaktformular sendet serverseitig über die Resend-API an **grundstueckspflege.sh@outlook.de**. Es wird keine zusätzliche E-Mail-Bibliothek benötigt.
+Bestehende Next.js-Website mit TypeScript und Tailwind CSS. Das Kontaktformular sendet serverseitig über die Resend-API an **Info@haegele-siebert.de**. Es wird keine zusätzliche E-Mail-Bibliothek benötigt.
 
 ## 1. Lokal starten
 
@@ -46,10 +46,10 @@ Keine dieser Variablen benötigt ein `NEXT_PUBLIC_`-Präfix. Nach Änderungen de
 1. Ein [Resend-Konto](https://resend.com) anlegen.
 2. Eine eigene Domain oder eine eigene Versand-Subdomain in Resend hinzufügen und mit den dort angegebenen DNS-Einträgen verifizieren. Die [Resend-Domainanleitung](https://resend.com/docs/dashboard/domains/introduction) beschreibt die Einträge. Bestehende DNS-Einträge für andere Postfächer erhalten.
 3. Einen API-Key mit Sendeberechtigung anlegen und als `RESEND_API_KEY` speichern.
-4. `CONTACT_FROM_EMAIL` auf eine Adresse unter der verifizierten Domain setzen. Die Outlook-Adresse ist der **Empfänger**; sie ist keine eigene verifizierbare Absenderdomain. Ein separates Postfach für die Absenderadresse ist für den API-Versand nicht erforderlich.
-5. Server neu starten bzw. Deployment erneuern. Eine Anfrage mit eigenen Daten senden, den Eingang im Outlook-Postfach einschließlich Spamordner prüfen und auf die Nachricht antworten. `Reply-To` enthält die E-Mail-Adresse des Kunden.
+4. `CONTACT_FROM_EMAIL` auf eine Adresse unter der verifizierten Domain setzen. Der **Empfänger** ist Info@haegele-siebert.de; die Absenderdomain muss separat in Resend verifiziert werden. Ein separates Postfach für die Absenderadresse ist für den API-Versand nicht erforderlich.
+5. Server neu starten bzw. Deployment erneuern. Eine Anfrage mit eigenen Daten senden, den Eingang im Postfach Info@haegele-siebert.de einschließlich Spamordner prüfen und auf die Nachricht antworten. `Reply-To` enthält die E-Mail-Adresse des Kunden.
 
-Ohne Zugangsdaten zeigt das Formular eine verständliche Fehlermeldung; es meldet keinen erfolgreichen Versand. Erfolg wird erst angezeigt, wenn Resend die Nachricht angenommen und eine Nachrichten-ID zurückgegeben hat. Die endgültige Zustellung ins Outlook-Postfach muss bei der Einrichtung geprüft werden.
+Ohne Zugangsdaten zeigt das Formular eine verständliche Fehlermeldung; es meldet keinen erfolgreichen Versand. Erfolg wird erst angezeigt, wenn Resend die Nachricht angenommen und eine Nachrichten-ID zurückgegeben hat. Die endgültige Zustellung ins Postfach Info@haegele-siebert.de muss bei der Einrichtung geprüft werden.
 
 Das Formular prüft Eingaben im Browser und auf dem Server, begrenzt die Größe von Anfragen und verwendet ein Honeypot-Feld sowie eine Prüfung der Anfrageherkunft. Eine wiederholte Übermittlung desselben Versuchs erhält denselben Idempotenzschlüssel, um doppelte E-Mails bei Netzwerkproblemen zu vermeiden. Ein Honeypot ist einfacher Spam-Schutz; bei tatsächlichem Missbrauch können zusätzliche Schutzmaßnahmen am Hosting aktiviert werden.
 

@@ -4,7 +4,7 @@ for (const page of pages) {
   const html = await readFile(new URL(`../.next/server/app/${page}`, import.meta.url), 'utf8');
   if (!html.includes('id="hauptinhalt"') || !html.includes('lang="de"')) throw new Error(`Unvollständige Seite: ${page}`);
   if (/Testversion|Testdaten|Musterstraße|Musterstadt|kontakt@example\.com|https?:\/\/(?:localhost|127\.0\.0\.1)|Bitte ergänzen|Vor Veröffentlichung ergänzen|Noch zu ergänzende Angaben/.test(html)) throw new Error(`Veraltete Daten oder Platzhalter: ${page}`);
-  if (!html.includes('mailto:grundstueckspflege.sh@outlook.de') || !html.includes('tel:01771983867')) throw new Error(`Kontaktlink fehlt: ${page}`);
+  if (!html.includes('mailto:Info@haegele-siebert.de') || !html.includes('tel:01771983867')) throw new Error(`Kontaktlink fehlt: ${page}`);
   console.log(`OK: ${page}`);
 }
 for (const asset of ['garten.jpg', 'favicon.svg']) await access(new URL(`../public/${asset}`, import.meta.url));

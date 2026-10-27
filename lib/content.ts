@@ -6,7 +6,7 @@ export const company = {
   city: "71573 Allmersbach im Tal",
   country: "Deutschland",
   partners: "Chris Hägele und Philipp Siebert",
-  email: "grundstueckspflege.sh@outlook.de",
+  email: "Info@haegele-siebert.de",
   phone: "01771983867",
   instagram: "https://www.instagram.com/grundstuckspflegesieberthagele?utm_source=ig_web_button_share_sheet&dlrf=ZDNlZDc0MzIxNw==",
 };
